@@ -55,7 +55,7 @@ form.addEventListener("submit", function (e) {
 
     messageBlock.innerText = `New Employee Information for ${empName}, ID ${empId} accepted.`;
     messageBlock.classList.add("message--success");
-    messageBlock.classList.hidden = false;
+    messageBlock.hidden = false;
     setTimeout(() => {
       messageBlock.hidden = true;
       messageBlock.innerText = "";
