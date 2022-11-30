@@ -5,6 +5,7 @@
 
 const form = document.getElementById("employeeForm");
 const messageBlock = document.getElementById("messageBlock");
+const list = document.getElementById("employeesList");
 
 form.elements["randomizeBtn"].addEventListener("click", function () {
   form.elements["empName"].value = "John Doe";
@@ -46,7 +47,24 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   if (formIsComplete(form)) {
-    // TODO: Handle completed form.
+    const empName = form.elements["empName"].value;
+    const empId = form.elements["empId"].value;
+    const empDateOfBirth = form.elements["empDateOfBirth"].value;
+    const empDepartment = form.elements["empDepartment"].value;
+    const empManager = form.elements["empManager"].value;
+
+    messageBlock.innerText = `New Employee Information for ${empName}, ID ${empId} accepted.`;
+    messageBlock.classList.add("message--success");
+    messageBlock.classList.hidden = false;
+    setTimeout(() => {
+      messageBlock.hidden = true;
+      messageBlock.innerText = "";
+      messageBlock.classList.remove("message--success");
+    }, 3000);
+    form.reset();
+    const newEmpLi = document.createElement("li");
+    newEmpLi.innerText = `${empName} (${empId}), DOB: ${empDateOfBirth}, Dep: ${empDepartment}, Mgr: ${empManager}`;
+    list.appendChild(newEmpLi);
   } else {
     messageBlock.innerText = "Please complete all fields.";
     messageBlock.classList.add("message--error");
