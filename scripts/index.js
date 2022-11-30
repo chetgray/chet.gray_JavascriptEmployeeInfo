@@ -47,6 +47,7 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   if (formIsComplete(form)) {
+    console.debug("submit event fired, setting success message");
     const empName = form.elements["empName"].value;
     const empId = form.elements["empId"].value;
     const empDateOfBirth = form.elements["empDateOfBirth"].value;
@@ -56,23 +57,28 @@ form.addEventListener("submit", function (e) {
     messageBlock.innerText = `New Employee Information for ${empName}, ID ${empId} accepted.`;
     messageBlock.classList.add("message--success");
     messageBlock.hidden = false;
-    setTimeout(() => {
+    const id = setTimeout(() => {
+      console.debug(`timeout ${id} fired, clearing success message`);
       messageBlock.hidden = true;
       messageBlock.innerText = "";
       messageBlock.classList.remove("message--success");
     }, 3000);
+    console.debug(`timeout ${id} set (success)`);
     form.reset();
     const newEmpLi = document.createElement("li");
     newEmpLi.innerText = `${empName} (${empId}), DOB: ${empDateOfBirth}, Dep: ${empDepartment}, Mgr: ${empManager}`;
     list.appendChild(newEmpLi);
   } else {
+    console.debug("submit event fired, setting error message");
     messageBlock.innerText = "Please complete all fields.";
     messageBlock.classList.add("message--error");
     messageBlock.hidden = false;
-    setTimeout(() => {
+    const id = setTimeout(function () {
+      console.debug(`timeout ${id} fired, clearing error message`);
       messageBlock.hidden = true;
       messageBlock.innerText = "";
       messageBlock.classList.remove("message--error");
     }, 3000);
+    console.debug(`timeout ${id} set (error)`);
   }
 });
