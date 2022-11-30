@@ -6,10 +6,10 @@ User Story #211904: JavaScript: Enter Employee Info.
 
 > Create a simple HTML webpage for entering employee information.
 >
-> - [ ] It should contain the Employee ID, Employee Name, Employee Date of Birth,
+> - [x] It should contain the Employee ID, Employee Name, Employee Date of Birth,
 >       Department, and Manager.
-> - [ ] It should contain a Submit button.
-> - [ ] The title for the page should be "Enter New Employee Information".
+> - [x] It should contain a Submit button.
+> - [x] The title for the page should be "Enter New Employee Information".
 > - [ ] When the user clicks Submit, validate that they entered information in all of
 >       the fields. If they did not, send a message asking them to enter all of the
 >       information. Remove the error message after 3 seconds.

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/sanitize.css" />
+  <link rel="stylesheet" href="https://unpkg.com/sanitize.css/typography.css" />
+  <link rel="stylesheet" href="styles/debug.css" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enter New Employee Information</title>
+</head>
+
+<body>
+  <h1>Enter New Employee Information</h1>
+  <form id="employeeForm" method="post">
+    <div>
+      <label for="employeeIdInput">Employee ID</label>
+      <input type="text" id="employeeIdInput" name="employeeIdInput" required />
+    </div>
+    <div>
+      <label for="employeeNameInput">Employee Name</label>
+      <input type="text" id="employeeNameInput" name="employeeNameInput" required />
+    </div>
+    <div>
+      <label for="employeeDOBInput">Employee Date of Birth</label>
+      <input type="date" id="employeeDOBInput" name="employeeDOBInput" required />
+    </div>
+    <div>
+      <label for="departmentInput">Department</label>
+      <input type="text" id="departmentInput" name="departmentInput" required />
+    </div>
+    <div>
+      <label for="managerInput">Manager</label>
+      <input type="text" id="managerInput" name="managerInput" required />
+    </div>
+    <div><button type="submit">Submit</button></div>
+  </form>
+  <div id="message"></div>
+  <div>
+    <h2>Employees Added</h2>
+    <ul id="employeesList"></ul>
+  </div>
+</body>
+
+</html>

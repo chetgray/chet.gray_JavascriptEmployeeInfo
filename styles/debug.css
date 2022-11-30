@@ -1,0 +1,30 @@
+/***************************************************
+* Different background-color for each nested level *
+***************************************************/
+
+/* Exclude buttons and input elements */
+
+* * *:not(button, dialog, input, mark, meter, option, progress, select, textarea) {
+  background-color: hsla(213, 100%, 75%, 0.5);
+}
+
+* * *
+  *:not(button, dialog, input, mark, meter, option, progress, select, textarea) {
+  background-color: hsla(171, 100%, 75%, 0.5);
+}
+
+* * * * *:not(button, dialog, input, mark, meter, option, progress, select, textarea) {
+  background-color: hsla(128, 100%, 75%, 0.5);
+}
+
+* * * * * *:not(button, dialog, input, mark, meter, option, progress, select, textarea) {
+  background-color: hsla(85, 100%, 75%, 0.5);
+}
+
+* * * * * * *:not(button, dialog, input, mark, meter, option, progress, select, textarea) {
+  background-color: hsla(43, 100%, 75%, 0.5);
+}
+
+* * * * * * * *:not(button, dialog, input, mark, meter, option, progress, select, textarea) {
+  background-color: hsla(0, 100%, 75%, 0.5);
+}
