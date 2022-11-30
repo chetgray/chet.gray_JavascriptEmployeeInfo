@@ -49,12 +49,12 @@ form.addEventListener("submit", function (e) {
     // TODO: Handle completed form.
   } else {
     messageBlock.innerText = "Please complete all fields.";
-    messageBlock.className = "message--error";
+    messageBlock.classList.add("message--error");
     messageBlock.hidden = false;
     setTimeout(() => {
       messageBlock.hidden = true;
       messageBlock.innerText = "";
-      messageBlock.className = "";
+      messageBlock.classList.remove("message--error");
     }, 3000);
   }
 });
