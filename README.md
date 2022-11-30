@@ -10,7 +10,7 @@ User Story #211904: JavaScript: Enter Employee Info.
 >       Department, and Manager.
 > - [x] It should contain a Submit button.
 > - [x] The title for the page should be "Enter New Employee Information".
-> - [ ] When the user clicks Submit, validate that they entered information in all of
+> - [x] When the user clicks Submit, validate that they entered information in all of
 >       the fields. If they did not, send a message asking them to enter all of the
 >       information. Remove the error message after 3 seconds.
 > - [ ] Once an entry is accepted, display a message for 3 seconds stating, "New

@@ -4,6 +4,7 @@
  */
 
 const form = document.getElementById("employeeForm");
+const messageBlock = document.getElementById("messageBlock");
 
 form.elements["randomizeBtn"].addEventListener("click", function () {
   form.elements["empName"].value = "John Doe";
@@ -14,10 +15,8 @@ form.elements["randomizeBtn"].addEventListener("click", function () {
 });
 
 /**
- *
  * Returns true if all the specified form fields are not-empty, and false otherwise. If
  * fields are not specified, all fields are checked.
- *
  * @param {HTMLFormElement} form - The form element.
  * @param {?string[]} [fieldNames] - Names of fields to check. If `undefined` or `null`,
  * all fields will be checked.
@@ -42,3 +41,20 @@ function formIsComplete(form, fieldNames) {
     return isComplete;
   }
 }
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  if (formIsComplete(form)) {
+    // TODO: Handle completed form.
+  } else {
+    messageBlock.innerText = "Please complete all fields.";
+    messageBlock.className = "message--error";
+    messageBlock.hidden = false;
+    setTimeout(() => {
+      messageBlock.hidden = true;
+      messageBlock.innerText = "";
+      messageBlock.className = "";
+    }, 3000);
+  }
+});
