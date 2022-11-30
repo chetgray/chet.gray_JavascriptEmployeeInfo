@@ -3,6 +3,16 @@
  * @author Chet Gray <chet.gray@waystar.com>
  */
 
+const form = document.getElementById("employeeForm");
+
+form.elements["randomizeBtn"].addEventListener("click", function () {
+  form.elements["empName"].value = "John Doe";
+  form.elements["empId"].value = "123456789";
+  form.elements["empDateOfBirth"].value = "1990-01-01";
+  form.elements["empDepartment"].value = "Sales";
+  form.elements["empManager"].value = "Jane Smith";
+});
+
 /**
  *
  * Returns true if all the specified form fields are not-empty, and false otherwise. If
