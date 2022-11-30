@@ -15,6 +15,29 @@ form.elements["randomizeBtn"].addEventListener("click", function () {
   form.elements["empManager"].value = "Jane Smith";
 });
 
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  if (formIsComplete(form)) {
+    const empName = form.elements["empName"].value;
+    const empId = form.elements["empId"].value;
+    const empDateOfBirth = form.elements["empDateOfBirth"].value;
+    const empDepartment = form.elements["empDepartment"].value;
+    const empManager = form.elements["empManager"].value;
+
+    setMessage(
+      `New Employee Information for ${empName}, ID ${empId} accepted.`,
+      "success"
+    );
+    form.reset();
+    const newEmpLi = document.createElement("li");
+    newEmpLi.innerText = `${empName} (${empId}), DOB: ${empDateOfBirth}, Dep: ${empDepartment}, Mgr: ${empManager}`;
+    list.appendChild(newEmpLi);
+  } else {
+    setMessage("Please fill out all fields.", "error");
+  }
+});
+
 /**
  * Returns true if all the specified form fields are not-empty, and false otherwise. If
  * fields are not specified, all fields are checked.
@@ -43,29 +66,6 @@ function formIsComplete(form, fieldNames) {
     return isComplete;
   }
 }
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  if (formIsComplete(form)) {
-    const empName = form.elements["empName"].value;
-    const empId = form.elements["empId"].value;
-    const empDateOfBirth = form.elements["empDateOfBirth"].value;
-    const empDepartment = form.elements["empDepartment"].value;
-    const empManager = form.elements["empManager"].value;
-
-    setMessage(
-      `New Employee Information for ${empName}, ID ${empId} accepted.`,
-      "success"
-    );
-    form.reset();
-    const newEmpLi = document.createElement("li");
-    newEmpLi.innerText = `${empName} (${empId}), DOB: ${empDateOfBirth}, Dep: ${empDepartment}, Mgr: ${empManager}`;
-    list.appendChild(newEmpLi);
-  } else {
-    setMessage("Please fill out all fields.", "error");
-  }
-});
 
 /**
  * Sets the message block to display a message, and clears it after a timeout.
