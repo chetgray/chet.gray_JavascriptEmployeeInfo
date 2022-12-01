@@ -7,14 +7,6 @@ const form = document.getElementById("employeeForm");
 const messageBlock = document.getElementById("messageBlock");
 const list = document.getElementById("employeesList");
 
-form.elements["randomizeBtn"].addEventListener("click", function () {
-  form.elements["empName"].value = "John Doe";
-  form.elements["empId"].value = "123456789";
-  form.elements["empDateOfBirth"].value = "1990-01-01";
-  form.elements["empDepartment"].value = "Sales";
-  form.elements["empManager"].value = "Jane Smith";
-});
-
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
