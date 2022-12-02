@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="user">
+
+<head>
+  <script defer type="text/javascript" src="scripts/index.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/sanitize.css" />
+  <link rel="stylesheet" href="styles/mvp.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <!-- <link rel="stylesheet" href="styles/debug.css" /> -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enter New Employee Information</title>
+</head>
+
+<body>
+  <header>
+    <h1>Enter New Employee Information</h1>
+  </header>
+  <main>
+    <section>
+      <form id="employeeForm" method="post">
+        <div>
+          <label for="empId">Employee ID</label>
+          <input type="text" id="empId" name="empId" />
+        </div>
+        <div>
+          <label for="empName">Employee Name</label>
+          <input type="text" id="empName" name="empName" />
+        </div>
+        <div>
+          <label for="empDateOfBirth">Employee Date of Birth</label>
+          <input type="date" id="empDateOfBirth" name="empDateOfBirth" />
+        </div>
+        <div>
+          <label for="empDepartment">Department</label>
+          <input type="text" id="empDepartment" name="empDepartment" />
+        </div>
+        <div>
+          <label for="empManager">Manager</label>
+          <input type="text" id="empManager" name="empManager" />
+        </div>
+        <div>
+          <button type="submit" value="Submit">Submit</button>
+        </div>
+        <div id="messageBlock" hidden></div>
+      </form>
+    </section>
+    <section>
+      <header>
+        <h2>Employees Added</h2>
+      </header>
+      <ul id="employeesList"></ul>
+    </section>
+  </main>
+</body>
+
+</html>
